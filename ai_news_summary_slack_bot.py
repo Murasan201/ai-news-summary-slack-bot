@@ -23,7 +23,7 @@ openai.api_key = OPENAI_API_KEY
 FEEDS = {
     "MIT Technology Review AI": "https://www.technologyreview.com/tag/artificial-intelligence/feed/",
     "AI News"                 : "https://artificialintelligence-news.com/feed/",
-    "ITmedia AI＋"            : "https://www.itmedia.co.jp/ai-plus/rss2"
+    "ITmedia AI＋"            : "https://rss.itmedia.co.jp/rss/2.0/aiplus.xml"
 }
 
 # 要約対象の記事数（各サイトごと）
@@ -53,7 +53,7 @@ def summarize_with_chatgpt(site_name, items):
         "日本語で250文字以内の箇条書き要約にしてください。\n\n"
         + "\n".join(items)
     )
-    response = openai.ChatCompletion.create(
+    response = openai.chat.completions.create(
         model="gpt-4o-mini",
         temperature=0.3,
         messages=[

@@ -15,10 +15,16 @@ A Python bot that fetches AI news from RSS feeds, uses OpenAI’s ChatGPT to gen
 ## Prerequisites
 
 - Python 3.7 or higher
-- Install dependencies:
-  ```bash
-  pip install feedparser openai requests
-  ```
+
+## Setup
+
+Create and activate a virtual environment, then install dependencies:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install feedparser openai requests
+```
 
 ## Configuration
 
