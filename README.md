@@ -11,24 +11,32 @@ A Python bot that fetches AI news from RSS feeds, uses OpenAI’s ChatGPT to gen
   - ITmedia AI＋
 - Summarize articles with OpenAI API (ChatGPT)
 - Post summaries to Slack using Incoming Webhooks
+- **Notebook Version:** Interactive Jupyter Notebook available for experimentation and step-by-step execution
 
 ## Prerequisites
 
 - Python 3.7 or higher
+- Jupyter Notebook or Jupyter Lab (for interactive usage)
 
 ## Setup
 
-Create and activate a virtual environment, then install dependencies:
+1. Create and activate a virtual environment, then install dependencies:
 
-```bash
-python3 -m venv venv
-source venv/bin/activate
-pip install feedparser openai requests
-```
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   pip install feedparser openai requests jupyter
+   ```
+
+2. Optionally, install Jupyter Lab:
+
+   ```bash
+   pip install jupyterlab
+   ```
 
 ## Configuration
 
-Set the following environment variables before running the script:
+Set the following environment variables before running the script or notebook:
 
 ```bash
 export OPENAI_API_KEY="your_openai_api_key"
@@ -37,11 +45,22 @@ export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/..."
 
 ## Usage
 
-Run the script:
+### 1. Script Version
+
+Run the Python script directly:
 
 ```bash
 python ai_news_summary_slack_bot.py
 ```
+
+### 2. Notebook Version
+
+1. Launch Jupyter Notebook in the project root:
+   ```bash
+   jupyter notebook
+   ```
+2. Open the notebook file at `notebook/ai_news_summary_slack_bot.ipynb`.
+3. Execute cells interactively to fetch, summarize, and post news to Slack.
 
 ## Scheduling
 
@@ -49,6 +68,16 @@ You can automate the script execution with cron or systemd. For example, to run 
 
 ```cron
 0 9 * * * /usr/bin/env python3 /path/to/ai_news_summary_slack_bot.py
+```
+
+## Directory Structure
+
+```
+├── ai_news_summary_slack_bot.py
+├── notebook/
+│   └── ai_news_summary_slack_bot.ipynb
+├── requirements.txt
+└── README.md
 ```
 
 ## Author
